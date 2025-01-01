@@ -102,6 +102,7 @@ jobs:
 
 ### In manual triggered workflow, see [workflow_dispatch event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch).
 > In this way, you can manually trigger the workflow at any time to delete old workflow runs. <br/>
+
 ![manual workflow](img/example.PNG)
 
 ```yaml

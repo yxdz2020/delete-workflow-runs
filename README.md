@@ -75,12 +75,14 @@ If true, the Runs will be checked for linkage to a PR.
 ## Examples
 ### In scheduled workflow, see [schedule event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#schedule).
 > **Tip:** Using scheduled workflow is the recommended way that can periodically, automatically delete old workflow runs.
+
 ```yaml
 name: Delete old workflow runs
+
 on:
+  workflow_dispatch:   # 允许手动触发
   schedule:
-    - cron: '0 0 1 * *'
-# Run monthly, at 00:00 on the 1st day of month.
+    - cron: '0 0 1 * *'   # Run monthly, at 00:00 on the 1st day of month.
 
 jobs:
   del_runs:
@@ -101,6 +103,7 @@ jobs:
 ### In manual triggered workflow, see [workflow_dispatch event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch).
 > In this way, you can manually trigger the workflow at any time to delete old workflow runs. <br/>
 ![manual workflow](img/example.PNG)
+
 ```yaml
 name: Delete old workflow runs
 on:

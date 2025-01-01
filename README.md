@@ -90,12 +90,12 @@ jobs:
       contents: read
     steps:
       - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
+        uses: yxdz2020/delete-workflow-runs@v20250101
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 30
-          keep_minimum_runs: 6
+          retain_days: 3
+          keep_minimum_runs: 10
 ```
 
 ### In manual triggered workflow, see [workflow_dispatch event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch).
@@ -104,7 +104,7 @@ jobs:
 ```yaml
 name: Delete old workflow runs
 on:
-  workflow_dispatch:
+  workflow_dispatch:   # 允许手动触发
     inputs:
       days:
         description: 'Days-worth of runs to keep for each workflow'

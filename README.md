@@ -96,8 +96,8 @@ jobs:
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 3
-          keep_minimum_runs: 10
+          retain_days: 0
+          keep_minimum_runs: 50
 ```
 
 ### In manual triggered workflow, see [workflow_dispatch event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#workflow_dispatch).
